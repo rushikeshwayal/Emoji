@@ -1,7 +1,7 @@
 import React from "react";
 import './index.css'; 
 import Nav from "./components/Nav";
-import Search from "./components/Search";
+// import Search from "./components/Search";
 import Home from "./components/home";
 
 function App() {
@@ -9,9 +9,6 @@ function App() {
         <div>
         <div>
            <Nav />
-        </div>
-        <div>
-           <Search />
         </div>
         <div>
         <Home />
