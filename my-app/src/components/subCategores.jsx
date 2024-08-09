@@ -4,22 +4,37 @@ import SubgroupCategories from "./subgroupCategories";
 
 function SubCategories() {
 
+ const [emoji,setEmoji] = useState([]);
+   //  const {group} = useParams();
 
+ 
+
+   useEffect(()=>{
+      
+    fetch("http://localhost:3000/emoji/api")
+    .then((response)=>response.json())
+    .then((data)=>{
+      setEmoji(data);
+
+    })
+   
+   },[]);
 
 return(
     
          <div className="m-10 space-y-5">
-       
-            <SubgroupCategories subGroup="face-smiling"  />
-            <SubgroupCategories subGroup="face-affection"  />
-            <SubgroupCategories subGroup="face-tongue"  />
-            <SubgroupCategories subGroup="face-hand"  />
-            <SubgroupCategories subGroup="face-neutral-skeptical"  />
-            <SubgroupCategories subGroup="face-hat"  />
-            <SubgroupCategories subGroup="face-glasses"  />
-            <SubgroupCategories subGroup="face-concerned"  />
-            <SubgroupCategories subGroup="face-negative"  />
-            <SubgroupCategories subGroup="face-costume"  />
+       {/* adding if condition for dynamic pages */}
+            <SubgroupCategories group="smileys-emotion" subGroup="face-smiling"  />
+            <SubgroupCategories group="smileys-emotion" subGroup="face-affection"  />
+            <SubgroupCategories group="smileys-emotion" subGroup="face-tongue"  />
+            <SubgroupCategories group="smileys-emotion" subGroup="face-hand"  />
+            <SubgroupCategories group="smileys-emotion" subGroup="face-neutral-skeptical"  />
+            <SubgroupCategories group="smileys-emotion" subGroup="face-hat"  />
+            <SubgroupCategories  group="smileys-emotion"subGroup="face-glasses"  />
+            <SubgroupCategories group="smileys-emotion" subGroup="face-concerned"  />
+            <SubgroupCategories group="smileys-emotion" subGroup="face-negative"  />
+            <SubgroupCategories   group="smileys-emotion" subGroup="face-costume"  />
+            <SubgroupCategories group="smileys-emotion" subGroup="hand-fingers-open"  />
      
 
          </div>
