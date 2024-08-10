@@ -7,7 +7,7 @@ function Categories() {
 return(
     
          <div className="m-10 space-y-5">
-       
+       {}
             <Swipper title="Smileys & Emotion" categories="smileys-emotion" />
             <Swipper title="People & Body" categories="people-body" />
             <Swipper title="Animals & Nature" categories="animals-nature" />

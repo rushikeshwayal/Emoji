@@ -6,6 +6,8 @@ import Nav from "./components/Nav";
 import Home from "./components/home";
 import Categories from "./components/categories";
 import SubCategories from "./components/subCategores";
+import About from "./components/About-us";
+import Contact from "./components/contact-us";
 
 function App() {
     return(
@@ -20,7 +22,8 @@ function App() {
                 <Route index element= {<Home/>}  />
                 <Route path="/categories" element= {<Categories/>}  />
                 <Route path="/categories/:group" element= {<SubCategories/>}  />
-                {/* <Route path="/contact-us" element= {<Home/>}  /> */}
+                <Route path="/about" element= {<About/>}  />
+                <Route path="/contact" element= {<Contact/>}  />
             </Routes>
         </BrowserRouter>
 
