@@ -14,16 +14,22 @@ function SubCategories() {
  const [emoji,setEmoji] = useState([]);
    //  const {group} = useParams();
 
- 
+ const fetchApiData = async () => {
+  try {
+    const response = await fetch("http://localhost:3000");
+    if (!response.ok) {
+      throw new Error("Network Error");
+    }
+    const data = await response.json();
+    setEmoji(data);
+  } catch (error) {
+    console.log(error)
+  }
+ }
 
    useEffect(()=>{
       
-    fetch("http://localhost:3000")
-    .then((response)=>response.json())
-    .then((data)=>{
-      setEmoji(data);
-
-    })
+     fetchApiData();
    
    },[]);
 

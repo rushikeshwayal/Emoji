@@ -15,14 +15,20 @@ function SubgrouCategories(props) {
 
    useEffect(()=>{
       
-    fetch("http://localhost:3000")
-    .then((response)=>response.json())
-    .then((data)=>{
-      const filtered=data.filter((e)=>e.group=== group);
-      console.log(filtered)
-      setEmoji(filtered);
+const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:3000");
+      if (!response.ok) {
+        throw new Error("Network Error");
+      }
+      const data = await response.json();
+      setEmoji(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    })
+  fetchData();
    
    },[group]);
 

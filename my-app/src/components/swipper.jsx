@@ -9,16 +9,20 @@ import { Link } from 'react-router-dom';
   function Swipper(props) {
     
 const [emoji,setEmoji] = useState([]);
-const fetchApiData = () => {
-  fetch('http://localhost:3000')
-    .then(response=>{
-      return response.json()
-    })
-    .then(data=>{
-        setEmoji(data)
-    })
-}
+const fetchApiData = async () => {
+    try {
+      const response = await fetch("http://localhost:3000");
+      if (!response.ok) {
+        throw new Error("Network Error");
+      }
+      const data = await response.json();
+      setEmoji(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  
 
     useEffect(() => {
     fetchApiData();
