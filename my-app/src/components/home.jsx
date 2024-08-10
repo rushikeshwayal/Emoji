@@ -6,7 +6,7 @@ const [emoji,setEmoji] = useState([]);//setEmoji is function to do some work and
  
 
 const fetchApiData = () => {
-  fetch('http://localhost:3000/emoji/api')
+  fetch('http://localhost:3000')
     .then(response=>{
       return response.json()
     })

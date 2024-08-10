@@ -18,7 +18,7 @@ function SubCategories() {
 
    useEffect(()=>{
       
-    fetch("http://localhost:3000/emoji/api")
+    fetch("http://localhost:3000")
     .then((response)=>response.json())
     .then((data)=>{
       setEmoji(data);

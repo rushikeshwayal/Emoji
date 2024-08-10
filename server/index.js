@@ -17,19 +17,17 @@ const apiUrl = 'https://emoji-api.com/emojis?access_key=9d62d766c2c04076d191e31c
 
 fetch(apiUrl)
   .then(response => response.json())
-  .then(data => app.get('/emoji/api',(req,res)=>
+  .then(data => app.get('/',(req,res)=>
     {
     res.send(data);
-    console.log("response sent on http://localhost:3000/emoji/api")
+    console.log("response sent on http://localhost:3000")
     }
 ))
   .catch(error => console.error('Error:', error));
 
 
 
-app.get("/",(req,res)=>{
-  res.send("server is on")
-})
+
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
