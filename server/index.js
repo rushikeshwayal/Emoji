@@ -3,11 +3,23 @@ const fetch = require('node-fetch');
 const cors = require('cors');
 const app = express();
 
-app.use(cors({
-    origin: 'https://emoji-client-hmicjwez7-rushikeshwayals-projects.vercel.app'
-}));
+// Allow multiple origins, including your Vercel app and localhost for development
+const allowedOrigins = [
+    'https://emoji-server-sand.vercel.app/',
+    'http://localhost:3001'
+];
 
-// app.use(cors(corsOptions));
+app.use(cors({
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = 'The CORS policy for this site does not allow access from the specified origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    }
+}));
 
 const apiUrl = 'https://emoji-api.com/emojis?access_key=9d62d766c2c04076d191e31cecdac24d355d329b';
 

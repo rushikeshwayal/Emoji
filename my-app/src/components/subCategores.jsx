@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React from "react";
 import SubgroupCategories from "./subgroupCategories";
 // import groupSubgroupArr from "./groupSubgroupArr";
 
@@ -10,28 +10,28 @@ function SubCategories() {
   backgroundImage: 'linear-gradient(to right, rgba(255, 0, 150, 0), rgba(78, 0, 150, 0.75), rgba(255, 0, 150, 0))',
   // background: 'black',
   };
+// {useState,useEffect}
+//  const [emoji,setEmoji] = useState([]);
+//    //  const {group} = useParams();
 
- const [emoji,setEmoji] = useState([]);
-   //  const {group} = useParams();
+//  const fetchApiData = async () => {
+//   try {
+//     const response = await fetch("https://emoji-server-i1vidukqu-rushikeshwayals-projects.vercel.app/");
+//     if (!response.ok) {
+//       throw new Error("Network Error");
+//     }
+//     const data = await response.json();
+//     setEmoji(data);
+//   } catch (error) {
+//     console.log(error)
+//   }
+//  }
 
- const fetchApiData = async () => {
-  try {
-    const response = await fetch("https://emoji-server-i1vidukqu-rushikeshwayals-projects.vercel.app/");
-    if (!response.ok) {
-      throw new Error("Network Error");
-    }
-    const data = await response.json();
-    setEmoji(data);
-  } catch (error) {
-    console.log(error)
-  }
- }
-
-   useEffect(()=>{
+//    useEffect(()=>{
       
-     fetchApiData();
+//      fetchApiData();
    
-   },[]);
+//    },[]);
 
 
 
