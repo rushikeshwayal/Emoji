@@ -5,8 +5,9 @@ const app = express();
 
 // Allow multiple origins, including your Vercel app and localhost for development
 const allowedOrigins = [
-    'https://emoji-server-sand.vercel.app/',
-    'http://localhost:3001'
+      'https://emoji-client.vercel.app',    // Client URL on Vercel
+    'http://localhost:3001',              // Local development environment
+    'https://emoji-server-sand.vercel.app' // Server URL on Vercel
 ];
 
 app.use(cors({
