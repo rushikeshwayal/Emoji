@@ -4,7 +4,9 @@ const cors = require('cors');
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:3001',
+  // origin: 'http://localhost:3001',
+  origin:'https://emoji-client-7r59oqy07-rushikeshwayals-projects.vercel.app/',
+  
 };
 app.use(cors(corsOptions));
 
