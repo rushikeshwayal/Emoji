@@ -83,7 +83,7 @@ The Emoji Slider App is a React-based application that displays emojis in a caro
 
 Feel free to fork the repository and submit pull requests for any improvements or bug fixes.
 
-## Vercel Link - `https://emoji-client.vercel.app/`
+## Vercel Link - https://emoji-client.vercel.app/
 
 ## Contact
 
