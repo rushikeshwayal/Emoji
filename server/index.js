@@ -3,12 +3,11 @@ const fetch = require('node-fetch');
 const cors = require('cors');
 const app = express();
 
-const corsOptions = {
-  // origin: 'http://localhost:3001',
-  origin:'https://emoji-client-7r59oqy07-rushikeshwayals-projects.vercel.app/',
-  
-};
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://emoji-client-hmicjwez7-rushikeshwayals-projects.vercel.app'
+}));
+
+// app.use(cors(corsOptions));
 
 const apiUrl = 'https://emoji-api.com/emojis?access_key=9d62d766c2c04076d191e31cecdac24d355d329b';
 
