@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const [emoji,setEmoji] = useState([]);
 const fetchApiData = async () => {
     try {
-      const response = await fetch("http://localhost:3000");
+      const response = await fetch("https://emoji-server-i1vidukqu-rushikeshwayals-projects.vercel.app/");
       if (!response.ok) {
         throw new Error("Network Error");
       }
